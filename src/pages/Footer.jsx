@@ -11,6 +11,9 @@ const footerStyles = css`
     background-color: rgb(51 65 85);
     color: #ffffff;
   }
+  @media (max-width: 390px) {
+    padding: 1rem;
+  }
 `;
 
 const logoStyles = css`
@@ -22,11 +25,18 @@ const logoStyles = css`
   @media (min-width: 640px) {
     justify-content: flex-start;
   }
+  @media (max-width: 390px) {
+    flex-direction: column;
+  }
 `;
 
 const logoImgStyles = css`
   margin-right: 0.75rem;
   height: 2rem; /* Adjust as needed */
+  @media (max-width: 390px) {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const resourcesColumnStyles = css`
@@ -34,10 +44,14 @@ const resourcesColumnStyles = css`
   @media (min-width: 640px) {
     margin-bottom: 0;
   }
+  @media (max-width: 390px) {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 `;
 
 const footerLinkStyles = css`
-  color: #ffffff;
+  color: inherit;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -47,11 +61,10 @@ const footerLinkStyles = css`
 const Footer = () => {
   return (
     <footer css={footerStyles}>
-      <Grid container justifyContent="center" maxWidth="xl">
+      <Grid container justifyContent="center" maxWidth="xl" spacing={2}>
         <Grid item xs={12} md={6}>
           <div css={logoStyles}>
             <img src="/logo.svg" css={logoImgStyles} alt="Logo" />
-
             <Typography
               variant="h6"
               component="span"
@@ -81,7 +94,6 @@ const Footer = () => {
                     Github
                   </Link>
                 </li>
-
                 <li>
                   <Link
                     href="https://x.com/Suniltanwar97"
@@ -120,7 +132,6 @@ const Footer = () => {
       <Grid container justifyContent="center" sx={{ mt: 2 }}>
         <Typography
           variant="body2"
-          css={footerLinkStyles}
           sx={{ color: "rgba(0, 0, 0, 0.54)", mb: { xs: 2, sm: 0 } }}
         >
           © {new Date().getFullYear()} <Link href="/">QuickChat™</Link>. All
