@@ -43,7 +43,7 @@ const Footer = () => {
       <Grid container justifyContent="center" maxWidth="xl">
         <Grid item xs={12} md={6}>
           <div css={logoStyles}>
-            <img src="/public/logo.svg" css={logoImgStyles} alt="Logo.svg" />
+            <img src="./public/logo.svg" css={logoImgStyles} alt="Logo.svg" />
             <Typography
               variant="h6"
               component="span"
