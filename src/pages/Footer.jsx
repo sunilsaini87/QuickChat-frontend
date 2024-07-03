@@ -18,6 +18,10 @@ const logoStyles = css`
   align-items: center;
   text-decoration: none;
   color: inherit;
+  justify-content: center;
+  @media (min-width: 640px) {
+    justify-content: flex-start;
+  }
 `;
 
 const logoImgStyles = css`
@@ -27,6 +31,9 @@ const logoImgStyles = css`
 
 const resourcesColumnStyles = css`
   margin-bottom: 1.5rem;
+  @media (min-width: 640px) {
+    margin-bottom: 0;
+  }
 `;
 
 const footerLinkStyles = css`
@@ -57,7 +64,7 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Grid container spacing={2} sx={{ mt: { xs: 4, md: 0 } }}>
-            <Grid item xs={6} md={4} css={resourcesColumnStyles}>
+            <Grid item xs={12} sm={6} md={4} css={resourcesColumnStyles}>
               <Typography
                 variant="overline"
                 fontWeight="bold"
@@ -85,7 +92,7 @@ const Footer = () => {
                 </li>
               </ul>
             </Grid>
-            <Grid item xs={12} md={4} css={resourcesColumnStyles}>
+            <Grid item xs={12} sm={6} md={4} css={resourcesColumnStyles}>
               <Typography
                 variant="overline"
                 fontWeight="bold"
@@ -110,7 +117,7 @@ const Footer = () => {
         </Grid>
       </Grid>
 
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" sx={{ mt: 2 }}>
         <Typography
           variant="body2"
           css={footerLinkStyles}
