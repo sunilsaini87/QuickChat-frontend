@@ -76,7 +76,7 @@ const Header = () => {
         <AppBar position="fixed" sx={{ bgcolor: orange }}>
           <Toolbar>
             <img
-              src="logo.png"
+              src="/logo.png"
               alt="Logo.svg"
               style={{
                 height: "2rem",
